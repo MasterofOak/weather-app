@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div id="error-banner" class="hidden">
+            <span id="close" class="material-symbols-outlined"> cancel </span>
+            <p>
+                Your input was invalid! Check your typing or try another method!
+            </p>
+        </div>
+        <header>
+            <h1 id="location"></h1>
+            <form id="search-locatiion">
+                <input
+                    type="text"
+                    placeholder="Enter city name or zip code"
+                    id="search-bar"
+                    autocomplete="off"
+                />
+                <button id="search-btn" type="submit">
+                    <span id="search-icon" class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
+            <div id="temp-picker">
+                <button id="celsius">°C</button
+                ><button id="fahrenheit">°F</button>
+            </div>
+        </header>
+        <main>
+            <div id="grid-container">
+                <div data-day="0" id="today" class="weather-card">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="1" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="2" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="3" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="4" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="5" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div data-day="6" class="weather-card upcoming-days">
+                    <video></video>
+                    <div class="main-info"></div>
+                    <div class="full-info"></div>
+                </div>
+                <div id="hourly-weather"></div>
+            </div>
+        </main>
+        <footer>
+            <p>
+                Made by MasterofOak | GitHub Profile -
+                <a href="https://github.com/MasterofOak">MasterofOak</a>
+            </p>
+            <p>
+                Powered by
+                <a href="https://www.weatherapi.com/" title="Free Weather API"
+                    >WeatherAPI.com</a
+                >
+            </p>
+        </footer>
+        <script src="build.js"></script>
+    </body>
+</html>
