@@ -8,9 +8,9 @@ window.addEventListener('load', () => {
 
 async function getWeatherData(loc = 'Warsaw') {
   try {
-    const API_KEY = 'cb1a47541cb74a889db123750232408';
+    const API_KEY = 'API_KEY';
     const location = loc;
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=7&aqi=yes&alerts=no`;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=3&aqi=yes`;
     const response = await fetch(url);
     if (response.status === 400) throw new Error('Invalid input');
     const data = await response.json();
@@ -81,7 +81,7 @@ function displayFullInfo(weather) {
       visibilitty: `<span class="material-symbols-outlined"> visibility</span> Visibilitty: <span class="value">${day.day.avgvis_km}km</span>`,
       uv: `<span class="material-symbols-outlined">eyeglasses</span> UV index: <span class="value">${day.day.uv}</span>`,
       air: `<span class="material-symbols-outlined">airwave</span> Air quality: <span class="value">${getQuality(
-        day.day.air_quality['us-epa-index']
+        weather.current.air_quality['us-epa-index']
       )}</span>`,
     };
     const keys = Object.keys(fullData);
